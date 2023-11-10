@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature conversion</title>
+    <link rel="stylesheet" href="Temp.css">
+    <script src="Temp.js"></script>
+</head>
+<style>
+h1{
+    text-align: center;
+    color: maroon;
+}
+body{
+    background: rgb(238,174,188);
+    background: radial-gradient(circle, rgba(238,174,188,1) 0%, rgba(74,10,27,1) 100%);
+    color: white;
+}
+table{
+    margin: 0 auto;
+    margin-top:50px;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    border: 3px solid rgb(80, 12, 12);
+    border-radius: 20px;
+    color:rgb(247, 239, 239);
+ background: rgb(78,194,212);
+background: radial-gradient(circle, rgba(78,194,212,1) 0%, rgba(108,7,7,1) 0%);
+}
+#cel{
+    position: relative;
+padding: 5px ;
+border-radius: 15px;
+border: 2px solid rgb(80, 12, 12);
+}
+#fra{
+    padding: 5px ;
+    border-radius: 15px;
+    border: 2px solid rgb(80, 12, 12);
+}
+#res{
+    padding: 5px ;
+    width: 170px;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 3px solid rgb(80, 12, 12);
+} 
+#result{
+    padding: 5px ;
+    width: 170px;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 3px solid rgb(80, 12, 12);
+} 
+
+#res:hover{
+    color:rgb(191, 45, 45);
+}  
+#result:hover{
+    color:rgb(6, 97, 26);
+}
+</style>
+<script>
+function celsiustofahrenheit(num)
+{
+    let celsius=document.getElementById("cel").value;
+    fahrenheit=(celsius*9/5)+32;
+    document.getElementById("fra").value=fahrenheit;
+}
+function fahrenheittocelsius(num)
+{
+    let fahrenheit=document.getElementById("fra").value;
+    celsius=(fahrenheit-32)*(5/9);
+    document.getElementById("cel").value=celsius;
+}
+</script>
+<body>
+    <h1>Temperature Converter</h1>
+    <table>
+        <tr>
+          <td><label for="cel">Celsius</label></td>
+          <td><input type="number" id="cel" placeholder="Enter in Celsius" size="40px" height="60px"></td>
+       
+       <td>
+          <input id="res" type="button"  value="Convert into Frarenhit" onclick="celsiustofahrenheit(this.value);">
+          <input id="result" type="button"  value="Convert into Celsius" onclick="fahrenheittocelsius(this.value);"></td>
+     
+          <td><label for="fra">Frarenhit</label></td>
+          <td><input type="number"  placeholder="Frarenhit" id="fra" size="30px"></td>
+          </tr>
+          
+    </table>
+</body>
+</html>
